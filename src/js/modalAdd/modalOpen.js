@@ -1,5 +1,5 @@
-import { makeMarkUpAddModal } from "./createModalAdd";
-import { addFruit } from "../fetchFruitsAPI";
+import { makeMarkUpAddModal } from "../modalAdd/createModalAdd";
+import { addFruit } from "../helpersAPI/fetchFruitsAPI";
 const modalBackdrop = document.querySelector(".modal-add");
 
 export const modalAddOpen = async (evt) => {

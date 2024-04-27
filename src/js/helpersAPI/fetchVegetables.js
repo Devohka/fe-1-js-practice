@@ -1,7 +1,8 @@
 import { createProductsMarkUp } from "../createProduct";
+import axios from 'axios';
 const vegetablesListRef = document.querySelector(".vegetables__list");
 
-//? then()
+//?then()
 
 // export const fetchVegetables = () =>
 //   fetch("http://localhost:3000/vegetables")
@@ -18,12 +19,23 @@ const vegetablesListRef = document.querySelector(".vegetables__list");
 
 //? async/await
 
+// export const fetchVegetables = async () => {
+//   try {
+//     const resp = await fetch("http://localhost:3000/vegetables");
+//     const data = await resp.json();
+//     createProductsMarkUp(data, vegetablesListRef);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
 export const fetchVegetables = async () => {
   try {
-    const resp = await fetch("http://localhost:3000/vegetables");
-    const data = await resp.json();
-    createProductsMarkUp(data, vegetablesListRef);
+    const resp = await axios.get("http://localhost:3000/vegetables");
+
+    createProductsMarkUp(resp, vegetablesListRef);
   } catch (err) {
     console.log(err);
   }
 };
+
